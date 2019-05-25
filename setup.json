@@ -1,7 +1,7 @@
 {
   "name": "sql-migrate",
   "version": "0.1.0",
-  "description": "Write migrations in SQL.",
+  "description": "Write migrations in SQL",
   "url": "https://github.com/BlackEarth/sql-migrate",
   "author": "Sean Harrison",
   "author_email": "sah@bookgenesis.com",

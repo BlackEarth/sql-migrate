@@ -1,0 +1,23 @@
+name: 20190525_this
+base:
+  - 20190524_previous
+desc: >
+  This is an example of a migration configuration. Lorem ipsum dolor sit amet,
+  consectetur adipiscing elit. Fusce non porttitor quam, vitae condimentum mi.
+  Sed molestie lacus ut lorem finibus, non accumsan augue pretium. 
+up: 
+  - execute: up.sql
+  - copy_to:
+      table: namespaces
+      source: more_namespaces.csv   # we can use a file as a source
+      format: csv
+      delimiter: "|"
+      header: true
+  - copy_to:
+      table: namespaces
+      records:                      # we can also inline the data here if we choose.
+        - ["nn", "http://nn.org/ns", "A namespace"]
+      columns: ["ns", "uri", "description"]
+  - execute: up2.sql
+dn: 
+  - execute: dn.sql
